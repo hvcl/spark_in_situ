@@ -1,0 +1,28 @@
+Execution step:
+
+ 0. Setup GPU worker 
+
+ 1. Compile "ray_casting.cu" by
+
+      nvcc --ptx ray_casting.cu
+
+ 2. Set configuration in "volume_rendering.py"
+
+     for example:
+      - SPARK_PATH="/home/smhong/spark"
+      - GPU_API_PATH= "/home/smhong/spark_hvcl/import/"
+      - ImagePath = '/home/smhong/water_data'
+
+      - flag_GPUcache = True or False
+      - flag_GPUshuffle = True or False
+
+      - (screen) dimx = 1000
+      - (screen) dimy = 1000
+
+ 3. Execute "volume_rendering.py"
+ 
+      spark-submit volume_rendering.py
+   
+ 
+
+
